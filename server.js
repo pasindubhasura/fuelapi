@@ -33,7 +33,7 @@ app.get("/test", (req, res) => {
             name: "Kamal"
         },
     ];
-    res.json({ isSuccessful: true, users });
+    res.send({ isSuccessful: true, users });
 })
 app.use("/users", userRouter);
 app.use("/fuelStations", fuelStationRouter);
