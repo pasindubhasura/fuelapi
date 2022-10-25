@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 exports.login = async (req, res) => {
     const { uniqueIdentifier, password, userType } = req.body;
     console.log("user login...");
+    console.log(uniqueIdentifier, password, userType);
     let user;
 
     try {
