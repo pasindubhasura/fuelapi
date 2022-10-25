@@ -11,6 +11,9 @@ const app = express();
 
 app.use(cors()).use(express.json());
 
+app.get("/", (req, res) => {
+    res.send(`Server is working on PORT:${PORT}...`);
+})
 app.use("/users", userRouter);
 app.use("/fuelStations", fuelStationRouter);
 app.use("/queues", queueRouter);
