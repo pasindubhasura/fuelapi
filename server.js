@@ -14,6 +14,27 @@ app.use(cors()).use(express.json());
 app.get("/", (req, res) => {
     res.send(`Server is working on PORT:${PORT}...`);
 })
+app.get("/test", (req, res) => {
+    const users = [
+        {
+            id: 1,
+            name: "Amal"
+        },
+        {
+            id: 2,
+            name: "Lisa"
+        },
+        {
+            id: 3,
+            name: "Jagath"
+        },
+        {
+            id: 4,
+            name: "Kamal"
+        },
+    ];
+    res.json({ isSuccessful: true, users });
+})
 app.use("/users", userRouter);
 app.use("/fuelStations", fuelStationRouter);
 app.use("/queues", queueRouter);

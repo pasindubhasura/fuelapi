@@ -1,5 +1,15 @@
 const Queue = require("../models/queue.model");
 
+exports.createQueue = async (req, res) => {
+    const { stationId } = req.params;
+    try {
+        const queue = await Queue.create({ stationId });
+        res.json({ isSuccessful: true, queue });
+    } catch (error) {
+        res.json({ isSuccessful: false });
+    }
+};
+
 exports.addVehicle = async (req, res) => {
     const { stationId } = req.params;
     const { vehiclesNo, fuelType, vehiclesType, arrivedTime } = req.body;
