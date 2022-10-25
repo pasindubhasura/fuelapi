@@ -5,7 +5,7 @@ const userRouter = require("./routers/user.router");
 const fuelStationRouter = require("./routers/fuelStation.router");
 const queueRouter = require("./routers/queue.router");
 
-const PORT = 5050 || process.env.PORT;
+const PORT = process.env.PORT || 5050;
 const MONGO_URI = "mongodb+srv://admin:admin@cluster0.sz8scls.mongodb.net/FUEL_DB?retryWrites=true&w=majority";
 const app = express();
 
