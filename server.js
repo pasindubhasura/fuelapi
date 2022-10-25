@@ -33,7 +33,7 @@ app.get("/test", (req, res) => {
             name: "Kamal"
         },
     ];
-    res.json({ users });
+    res.json(users);
 })
 app.use("/users", userRouter);
 app.use("/fuelStations", fuelStationRouter);
