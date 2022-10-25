@@ -17,28 +17,23 @@ app.get("/", (req, res) => {
 app.get("/test", (req, res) => {
     const users = [
         {
-            "postId": 1,
-            "id": 1,
-            "name": "id labore ex et quam laborum",
-            "email": "Eliseo@gardner.biz",
-            "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+            id: 1,
+            name: "Amal"
         },
         {
-            "postId": 1,
-            "id": 2,
-            "name": "quo vero reiciendis velit similique earum",
-            "email": "Jayne_Kuhic@sydney.com",
-            "body": "est natus enim nihil est dolore omnis voluptatem numquam\net omnis occaecati quod ullam at\nvoluptatem error expedita pariatur\nnihil sint nostrum voluptatem reiciendis et"
+            id: 2,
+            name: "Lisa"
         },
         {
-            "postId": 1,
-            "id": 3,
-            "name": "odio adipisci rerum aut animi",
-            "email": "Nikita@garfield.biz",
-            "body": "quia molestiae reprehenderit quasi aspernatur\naut expedita occaecati aliquam eveniet laudantium\nomnis quibusdam delectus saepe quia accusamus maiores nam est\ncum et ducimus et vero voluptates excepturi deleniti ratione"
+            id: 3,
+            name: "Jagath"
+        },
+        {
+            id: 4,
+            name: "Kamal"
         },
     ];
-    res.json(users);
+    res.json({ users });
 })
 app.use("/users", userRouter);
 app.use("/fuelStations", fuelStationRouter);
