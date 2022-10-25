@@ -34,7 +34,7 @@ exports.register = async (req, res) => {
     console.log("user registering...");
 
     let user;
-    const decryptedPassword = bcrypt.hash(password, 10);
+    const decryptedPassword = await bcrypt.hash(password, 10);
 
     try {
         if (userType === "VEHICLE_OWNER") {
