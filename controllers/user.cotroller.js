@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
             user = await User.findOne({ vehicleNumber: uniqueIdentifier });
 
         } else if (userType === "STATION_OWNER") {
-            user = await User.findOne({ userName: uniqueIdentifier });
+            user = await User.findOne({ registerNo: uniqueIdentifier });
         }
         if (!user) {
             return res.json({ message: "User not found!", isSuccessful: false });
