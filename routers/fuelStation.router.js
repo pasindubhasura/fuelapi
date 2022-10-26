@@ -1,7 +1,8 @@
-const { getFuelData, updateFuelData, removeFuel, addFuelStation, searchFuelStations } = require("../controllers/fuelStation.controller");
+const { getFuelData, updateFuelData, removeFuel, addFuelStation, searchFuelStations, getAllFuelStations } = require("../controllers/fuelStation.controller");
 
 const fuelStationRouter = require("express").Router();
 
+fuelStationRouter.get("/getAll", getAllFuelStations);
 fuelStationRouter.get("/:stationId", getFuelData);
 fuelStationRouter.put("/:stationId", updateFuelData);
 fuelStationRouter.put("/reduceFuel/:stationId", removeFuel);
