@@ -1,5 +1,7 @@
+//queue controller
 const Queue = require("../models/queue.model");
 
+//create a queue
 exports.createQueue = async (req, res) => {
     const { stationId } = req.params;
     try {
@@ -10,6 +12,7 @@ exports.createQueue = async (req, res) => {
     }
 };
 
+//add vehicle to a queue
 exports.addVehicle = async (req, res) => {
     const { stationId } = req.params;
     const { vehiclesNo, fuelType, vehiclesType, arrivedTime } = req.body;
@@ -24,6 +27,7 @@ exports.addVehicle = async (req, res) => {
     }
 };
 
+//remove vehicle from a queue
 exports.removeFromQueue = async (req, res) => {
     const { stationId, vehiclesNo } = req.params;
 

@@ -1,3 +1,4 @@
+//model for fuel station
 const mongoose = require("mongoose");
 
 const fuelStationSchema = mongoose.Schema({

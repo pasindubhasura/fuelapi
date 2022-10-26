@@ -1,3 +1,4 @@
+//user router
 const { login, register } = require("../controllers/user.cotroller");
 
 const userRouter = require("express").Router();

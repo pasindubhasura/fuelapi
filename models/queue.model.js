@@ -1,3 +1,4 @@
+//model for queue
 const mongoose = require("mongoose");
 
 const queueSchema = mongoose.Schema({

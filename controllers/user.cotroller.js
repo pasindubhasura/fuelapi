@@ -1,6 +1,8 @@
+//user controller
 const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 
+//login user
 exports.login = async (req, res) => {
     const { uniqueIdentifier, password, userType } = req.body;
     console.log("user login...");
@@ -30,6 +32,7 @@ exports.login = async (req, res) => {
     }
 };
 
+//register user
 exports.register = async (req, res) => {
     const { userType, password, vehicleNumber, NIC, name, vehicleType, fuelType, chasisNumber, userName, stationName, registerNo } = req.body;
     console.log("user registering...");

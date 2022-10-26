@@ -1,3 +1,4 @@
+//router for fuel station
 const { getFuelData, updateFuelData, removeFuel, addFuelStation, searchFuelStations, getAllFuelStations } = require("../controllers/fuelStation.controller");
 
 const fuelStationRouter = require("express").Router();

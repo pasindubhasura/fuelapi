@@ -1,5 +1,8 @@
+//FuelStation controller
+
 const FuelStation = require("../models/fuelStation.model");
 
+//get fuel data for a station
 exports.getFuelData = async (req, res) => {
     const { stationId } = req.params;
 
@@ -11,6 +14,7 @@ exports.getFuelData = async (req, res) => {
     }
 };
 
+//update fuel data
 exports.updateFuelData = async (req, res) => {
     const { stationId } = req.params;
     const { fuelDetails, arrivedTime } = req.body;
@@ -27,6 +31,7 @@ exports.updateFuelData = async (req, res) => {
     }
 };
 
+//remove fuels from fuel station
 exports.removeFuel = async (req, res) => {
     const { stationId } = req.params;
     const { fuelType, quantity } = req.body;
@@ -41,6 +46,7 @@ exports.removeFuel = async (req, res) => {
     }
 };
 
+//add a fuel station
 exports.addFuelStation = async (req, res) => {
     const { ownerId, name, registerNo } = req.body;
 
@@ -52,6 +58,7 @@ exports.addFuelStation = async (req, res) => {
     }
 };
 
+//search fuel station
 exports.searchFuelStations = async (req, res) => {
     const { name } = req.params;
 
@@ -63,6 +70,7 @@ exports.searchFuelStations = async (req, res) => {
     }
 };
 
+//get all fuel stations
 exports.getAllFuelStations = async (req, res) => {
 
     try {

@@ -1,3 +1,4 @@
+//queue router
 const { addVehicle, removeFromQueue, createQueue } = require("../controllers/queue.controller");
 
 const queueRouter = require("express").Router();
