@@ -100,3 +100,14 @@ exports.getAllFuelStations = async (req, res) => {
         res.json({ isSuccessful: false });
     }
 };
+exports.getOwnerFuelStation = async (req, res) => {
+    const { ownerId } = req.params;
+
+    try {
+        const fuelStation = await FuelStation.find({ ownerId });
+        res.json({ isSuccessful: true, fuelStation });
+
+    } catch (error) {
+        res.json({ isSuccessful: false });
+    }
+}
