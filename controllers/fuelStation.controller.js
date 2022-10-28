@@ -37,10 +37,30 @@ exports.removeFuel = async (req, res) => {
     const { fuelType, quantity } = req.body;
 
     try {
-        await FuelStation.updateOne({ _id: stationId, "fuelDetails.fuelType": fuelType }, {
-            $set: { "fuelDetails.$.quantity": fuelDetails.quantity - quantity },
+
+        const ft = await FuelStation.findOne({
+            _id: stationId
+
         })
-        res.json({ isSuccessful: true });
+
+        const fd = ft.fuelDetails.filter(i => {
+            return i.fuelType === fuelType
+        })
+
+        await FuelStation.findOneAndUpdate(
+            { _id: stationId },
+            {
+                $set: {
+                    "fuelDetails.$[el].quantity": fd[0].quantity - quantity,
+                },
+            },
+            {
+                arrayFilters: [{ "el.fuelType": fuelType }],
+                new: true,
+            }
+        );
+
+        response.status(200).json({ isSuccessful: true });
     } catch (error) {
         res.json({ isSuccessful: false });
     }
