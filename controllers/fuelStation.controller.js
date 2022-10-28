@@ -100,6 +100,8 @@ exports.getAllFuelStations = async (req, res) => {
         res.json({ isSuccessful: false });
     }
 };
+
+//get one station
 exports.getOwnerFuelStation = async (req, res) => {
     const { ownerId } = req.params;
 
