@@ -27,6 +27,7 @@ exports.updateFuelData = async (req, res) => {
         await fuelStation.save();
         res.json({ isSuccessful: true, fuelStation });
     } catch (error) {
+        console.log("update error... " + error);
         res.json({ isSuccessful: false });
     }
 };
