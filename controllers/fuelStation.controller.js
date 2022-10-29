@@ -65,6 +65,7 @@ exports.removeFuel = async (req, res) => {
 
         response.status(200).json({ isSuccessful: true });
     } catch (error) {
+        console.log("reduce error...", error);
         res.json({ isSuccessful: false });
     }
 };
