@@ -70,8 +70,26 @@ exports.removeFuel = async (req, res) => {
 exports.addFuelStation = async (req, res) => {
     const { ownerId, name, registerNo } = req.body;
 
+    const fuelDetails = [
+        {
+            fuelType: "Diesel",
+            quantity: "0",
+        },
+        {
+            fuelType: "Super diesel",
+            quantity: "0",
+        },
+        {
+            fuelType: "Petrol 92",
+            quantity: "0",
+        },
+        {
+            fuelType: "Petrol 95",
+            quantity: "0",
+        }
+    ]
     try {
-        const fuelStation = await FuelStation.create({ ownerId, name, registerNo });
+        const fuelStation = await FuelStation.create({ ownerId, name, registerNo, fuelDetails });
         res.json({ isSuccessful: true, fuelStation });
     } catch (error) {
         res.json({ isSuccessful: false });
