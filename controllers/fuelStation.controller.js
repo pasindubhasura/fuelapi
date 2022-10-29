@@ -20,7 +20,7 @@ exports.updateFuelData = async (req, res) => {
     const { fuelDetails, arrivedTime } = req.body;
 
     try {
-        const fuelStation = await FuelStation.findOne(stationId);
+        const fuelStation = await FuelStation.findById(stationId);
         fuelStation.fuelDetails = fuelDetails;
         fuelStation.arrivedTime = arrivedTime;
 
