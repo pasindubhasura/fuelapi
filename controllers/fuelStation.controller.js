@@ -17,7 +17,9 @@ exports.getFuelData = async (req, res) => {
 //update fuel data
 exports.updateFuelData = async (req, res) => {
     const { stationId } = req.params;
-    const { fuelDetails, arrivedTime } = req.body;
+    let { fuelDetails, arrivedTime } = req.body;
+    fuelDetails = JSON.parse(fuelDetails);
+
 
     try {
         const fuelStation = await FuelStation.findById(stationId);
